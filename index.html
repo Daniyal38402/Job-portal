@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobSeeker Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <nav class="navbar">
+  <div class="logo">JobSeeker</div>
+   <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <!-- Navigation links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#Jobs">Jobs</a></li>
+    <li><a href="#Upload Resume">Upload Resume</a></li>
+    <li><a href="#Contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+  <header class="hero">
+    <h1>Find Your Dream Job</h1>
+    <p>Browse thousands of job opportunities from top companies</p>
+    <a href="jobs.html" class="btn">Browse Jobs</a>
+  </header>
+
+  
+  <section class="job-listing-section">
+    <h2>Available Jobs</h2>
+
+    <div class="filters">
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Web">Web Development</option>
+        <option value="Design">Design</option>
+        <option value="Marketing">Marketing</option>
+      </select>
+
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Karachi">Karachi</option>
+        <option value="Islamabad">Islamabad</option>
+      </select>
+
+      <select id="typeFilter">
+        <option value="">All Types</option>
+        <option value="Full-Time">Full-Time</option>
+        <option value="Part-Time">Part-Time</option>
+        <option value="Internship">Internship</option>
+      </select>
+    </div>
+
+    <div class="job-list" id="jobList">
+      <!-- Jobs will be inserted here by JS -->
+    </div>
+  </section>
+
+
+
+   <section class="job-details-section">
+    <div class="job-details-container">
+      <h2>Frontend Developer</h2>
+      <p><strong>Company:</strong> CodeMasters Pvt Ltd</p>
+      <p><strong>Location:</strong> Lahore</p>
+      <p><strong>Type:</strong> Full-Time</p>
+      <p><strong>Category:</strong> Web Development</p>
+      <p><strong>Salary:</strong> PKR 80,000 - 120,000</p>
+
+      <h3>Job Description:</h3>
+      <p>
+        We are looking for a skilled Frontend Developer to join our team. You will be responsible for developing and maintaining the UI of our web applications using HTML, CSS, and JavaScript frameworks.
+      </p>
+
+      <h3>Responsibilities:</h3>
+      <ul>
+        <li>Develop responsive front-end interfaces.</li>
+        <li>Work closely with backend developers and designers.</li>
+        <li>Maintain clean and efficient code.</li>
+      </ul>
+
+      <h3>Requirements:</h3>
+      <ul>
+        <li>1+ year experience in frontend development.</li>
+        <li>Strong knowledge of HTML, CSS, JavaScript.</li>
+        <li>Experience with React or similar frameworks is a plus.</li>
+      </ul>
+
+      <a href="#" class="btn apply-btn">Apply Now</a>
+    </div>
+  </section>
+
+
+
+
+
+   <section class="company-profile">
+    <div class="company-container">
+      <div class="company-header">
+        <img src="https://via.placeholder.com/100" alt="Company Logo" class="company-logo" />
+        <div>
+          <h2>CodeMasters Pvt Ltd</h2>
+          <p><strong>Location:</strong> Lahore, Pakistan</p>
+          <p><strong>Industry:</strong> Software Development</p>
+        </div>
+      </div>
+
+      <div class="company-about">
+        <h3>About Company</h3>
+        <p>
+          CodeMasters is a leading software house providing IT solutions worldwide.
+          We focus on web, mobile, and cloud development using modern technologies.
+        </p>
+      </div>
+
+      <div class="company-jobs">
+        <h3>Jobs Posted by CodeMasters</h3>
+        <ul>
+          <li><a href="job-details.html">Frontend Developer</a></li>
+          <li><a href="job-details.html">Backend Developer</a></li>
+          <li><a href="job-details.html">UI/UX Designer</a></li>
+        </ul>
+      </div>
+
+      <div class="company-contact">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> hr@codemasters.com</p>
+        <p><strong>Phone:</strong> +92-300-1234567</p>
+        <p><strong>Website:</strong> <a href="#">www.codemasters.com</a></p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+   <div class="auth-container">
+    <form class="auth-form" onsubmit="return loginUser()">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </form>
+  </div>
+
+   <div class="auth-container">
+    <form class="auth-form" onsubmit="return registerUser()">
+      <h2>Sign Up</h2>
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+
+
+
+
+  <section class="dashboard">
+    <h2>Welcome, Daniyal 👋</h2>
+
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>Saved Jobs</h3>
+        <ul>
+          <li><a href="job-details.html">Frontend Developer at CodeMasters</a></li>
+          <li><a href="job-details.html">UI Designer at PixelSoft</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>My Applications</h3>
+        <ul>
+          <li>Backend Developer - <span class="status applied">Applied</span></li>
+          <li>Web Designer - <span class="status reviewed">Under Review</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Profile Info</h3>
+        <p><strong>Name:</strong> Daniyal</p>
+        <p><strong>Email:</strong> daniyal@email.com</p>
+        <a href="#" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="dashboard">
+    <h2>Welcome, CodeMasters HR 👋</h2>
+
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>Posted Jobs</h3>
+        <ul>
+          <li><a href="job-details.html">Frontend Developer</a> - <span class="status open">Open</span></li>
+          <li><a href="job-details.html">Backend Developer</a> - <span class="status closed">Closed</span></li>
+        </ul>
+        <a href="post-job.html" class="btn">+ Post New Job</a>
+      </div>
+
+      <div class="card">
+        <h3>Applications Received</h3>
+        <ul>
+          <li>Ali Raza - Frontend Developer</li>
+          <li>Fatima Khan - Backend Developer</li>
+        </ul>
+        <a href="#" class="btn">View All Applications</a>
+      </div>
+
+      <div class="card">
+        <h3>Company Profile</h3>
+        <p><strong>Company:</strong> CodeMasters Pvt Ltd</p>
+        <p><strong>Email:</strong> hr@codemasters.com</p>
+        <a href="company-profile.html" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+   <section class="static-page">
+    <h2>Upload Your Resume</h2>
+    <form class="upload-form" onsubmit="return handleUpload(event)">
+      <input type="text" id="fullName" placeholder="Your Full Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" required />
+      <button type="submit">Upload Resume</button>
+    </form>
+    <p id="uploadStatus"></p>
+  </section>
+
+
+
+
+
+   <section class="static-page">
+    <h2>About Us</h2>
+    <p>
+      JobSeeker is a modern job portal built to connect talented job seekers with top companies. 
+      Our mission is to make job hunting easy, fast, and effective. Whether you're an experienced professional or just starting out, we help you find the right opportunities.
+    </p>
+    <p>
+      We also empower employers to post jobs, manage applicants, and find the perfect candidates quickly.
+    </p>
+  </section>
+
+   <section class="static-page">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out to us using the form or contact details below.</p>
+    <ul>
+      <li><strong>Email:</strong> Daniyalfarooq328@gmail.com</li>
+      <li><strong>Phone:</strong> +92 321 541 4483</li>
+      <li><strong>Address:</strong> Sahiwal, Sargodha, Pakistan</li>
+    </ul>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+
+
+
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3>JobSeeker</h3>
+      <p>Your trusted job portal connecting talent with opportunity across Pakistan.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="jobs.html">Browse Jobs</a></li>
+        <li><a href="upload.html">Upload Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h4>Contact</h4>
+      <p>Email: support@jobseeker.com</p>
+      <p>Phone: +92 300 1234567</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 JobSeeker. All rights reserved.
+  </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
